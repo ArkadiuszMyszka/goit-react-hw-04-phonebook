@@ -2,17 +2,12 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
-
-  // state = {
-  //   name: '',
-  //   number: '',
-  // };
-export const ContactForm = ({onSubmit}) => {
-  const [name, setName] = useState();
-  const [number, setNumber] = useState();
+export const ContactForm = ({ onSubmit }) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleChange = event => {
-    const { name, value } = event.currentTarget;
+    const { name, value } = event.target;
     switch (name) {
       case 'name':
         setName(value);
@@ -32,7 +27,6 @@ export const ContactForm = ({onSubmit}) => {
     setName('');
     setNumber('');
   };
-
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
@@ -65,7 +59,7 @@ export const ContactForm = ({onSubmit}) => {
       </button>
     </form>
   );
-}
+};
 
 ContactForm.prototypes = {
   name: PropTypes.string.isRequired,
