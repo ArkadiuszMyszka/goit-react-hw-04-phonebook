@@ -43,8 +43,8 @@ export const App = () => {
       : setContacts([contact, ...contacts]);
   };
 
-  const changeFilterInput = e => {
-    setFilter({ filter: e.target.value });
+  const changeFilterInput = (e) => {
+    setFilter(e.target.value );
   };
 
   return (
